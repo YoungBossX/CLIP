@@ -37,7 +37,7 @@ def class_demo2():
     model, preprocess = clip.load("./ViT-B-32.pt", device=device)  # 载入模型
     image = preprocess(Image.open("./ship.png")).unsqueeze(0).to(device)
     print('image.shape: ',image.shape)
-    text_language = ["a cropland", "a black cat", "a pole",'海上有一艘船','ship','农田中有一个杆子']
+    text_language = ["a cropland", "a black cat", "a pole",'海上有一艘船','a ship in the ocean','农田中有一个杆子']
     text = clip.tokenize(text_language).to(device)
     print('text: ',text)
     print('text.shape: ',text.shape)
