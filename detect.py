@@ -44,9 +44,9 @@ def class_demo2():
 
     with torch.no_grad():
         logits_per_image, logits_per_text = model(image, text)  # 第一个值是图像，第二个是第一个的转置
-        print(logits_per_image.shape)
+        print('logits_per_image shape: ', logits_per_image.shape)
         probs = logits_per_image.softmax(dim=-1).cpu().numpy()
-        #print(probs.shape)#(1, 4)
+        print('probs shape: ', probs.shape)
         idx = np.argmax(probs, axis=1)
         for i in range(image.shape[0]):
             id = idx[i]
